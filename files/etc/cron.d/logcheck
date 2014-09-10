@@ -1,9 +1,0 @@
-# /etc/cron.d/integrit: crontab entries for the integrit package
-
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-MAILTO=root
-
-@reboot         integrit    if [ -x /usr/sbin/integrit ]; then nice -n10 /usr/sbin/integrit -R; fi
-@daily          integrit    if [ -x /usr/sbin/integrit ]; then nice -n10 /usr/sbin/integrit; fi
-
-# EOF
