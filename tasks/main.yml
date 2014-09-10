@@ -1,0 +1,7 @@
+---
+# tasks file for integrit
+- name: install
+  apt:
+    name: integrit
+    state: latest
+  tags: [configuration, integrit, integrit-install]

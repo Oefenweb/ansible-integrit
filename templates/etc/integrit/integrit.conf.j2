@@ -1,0 +1,76 @@
+# /etc/integrit.conf : configuration file for integrit
+#
+# See integrit(1) and /usr/share/doc/integrit/examples/
+# for more information.
+#
+# *** WARNING ***
+#
+# This is a simple default configuration file for Debian systems.
+# It contains only comments, therefore integrit will not run with
+# it. To make integrit functional, you must edit this file according
+# to your needs.
+#
+# Please read README.Debian before running integrit.
+#
+# *** WARNING ***
+
+#
+# root=/
+# known=/var/lib/integrit/known.cdb
+# current=/var/lib/integrit/current.cdb
+#
+# # Here's a table of letters and the corresponding checks / options:
+# # Uppercase turns the check off, lowercase turns it on.
+# #
+# # 	  s	checksum
+# # 	  i	inode
+# # 	  p	permissions
+# # 	  l	number of links
+# # 	  u	uid
+# # 	  g	gid
+# # 	  z	file size (redundant if checksums are on)
+# # 	  a	access time
+# # 	  m	modification time
+# # 	  c	ctime (time UN*X file info last changed)
+# # 	  r	reset access time (use with care)
+#
+# # ignore directories that are expected to change
+#
+# !/cdrom
+# !/dev
+# !/etc
+# !/floppy
+# !/home
+# !/lost+found
+# !/mnt
+# !/proc
+# !/root
+# !/tmp
+# !/var
+#
+# # ignore inode, change time and modification time
+# # for ephemeral module files.
+#
+# /lib/modules/2.4.3/modules.dep IMC
+# /lib/modules/2.4.3/modules.generic_string IMC
+# /lib/modules/2.4.3/modules.isapnpmap IMC
+# /lib/modules/2.4.3/modules.parportmap IMC
+# /lib/modules/2.4.3/modules.pcimap IMC
+# /lib/modules/2.4.3/modules.usbmap IMC
+#
+# # to cut down on runtime and db size:
+#
+# =/usr/include
+# =/usr/X11R6/include
+#
+# =/usr/doc
+# =/usr/info
+# =/usr/share
+#
+# =/usr/X11R6/man
+# =/usr/X11R6/lib/X11/fonts
+#
+# # ignore user-dependant directories
+#
+# !/usr/local
+# !/usr/src

@@ -1,0 +1,6 @@
+---
+# test file for integrit
+- hosts: localhost
+  remote_user: root
+  roles:
+    - ansible-integrit

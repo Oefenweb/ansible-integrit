@@ -1,0 +1,19 @@
+# Configuration of the example daily cron job /etc/cron.daily/integrit
+
+# Set the configuration file(s) for integrit.  /etc/cron.daily/integrit
+# will run ``integrit -uc -C <file>'' for each file specified in CONFIGS.
+# An empty CONFIGS variable disables /etc/cron.daily/integrit.  Multiple
+# file names are separated with spaces, e.g.:
+# CONFIGS="/etc/integrit/usr.conf /etc/integrit/lib.conf"
+# CONFIGS="/etc/integrit/integrit.conf"
+CONFIGS=""
+
+# Set the mail address reports are sent to
+EMAIL_RCPT="root"
+
+# Set the subject line for the report mails
+EMAIL_SUBJ="[integrit] `hostname -f`: report on changes in the filesystems"
+
+# If ALWAYS_EMAIL is set to ``true'', a report is mailed on every run.
+# Normally a report is only generated when integrit(1) exits non-zero.
+ALWAYS_EMAIL=false
