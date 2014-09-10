@@ -1,5 +1,11 @@
 # {{ ansible_managed | wordwrap(wrapstring='\n# ') }}
 
+# /etc/integrit.conf : configuration file for integrit
+#
+# See integrit(1) and /usr/share/doc/integrit/examples/
+# for more information.
+#
+
 root={{ integrit_root }}
 known={{ integrit_known_db }}
 current={{ integrit_current_db }}
