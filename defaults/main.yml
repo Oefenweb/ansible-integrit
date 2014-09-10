@@ -1,2 +1,31 @@
 ---
 # defaults file for integrit
+integrit_configs:
+  - /etc/integrit/integrit.conf
+integrit_email_rcpt: root
+integrit_email_subj: '[integrit] `hostname -f`: report on changes in the filesystems'
+integrit_always_email: false
+
+integrit_root: /
+integrit_known_db: /var/lib/integrit/known.cdb
+integrit_current_db: /var/lib/integrit/current.cdb
+
+integrit_rules:
+  - '!/cdrom'
+  - '!/dev'
+  - '!/proc'
+  - '!/sys'
+  - '!/mnt'
+  - '!/media'
+  - '!/tmp'
+  - '!/run'
+
+  - '!/var/lib'
+  - '!/var/log'
+  - '!/var/lock'
+  - '!/var/cache'
+  - '!/var/spool/postfix'
+  - '!/var/backups'
+  - '!/var/run'
+
+  - '!{{ ansible_env.HOME }}/.ansible/tmp'

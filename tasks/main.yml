@@ -5,3 +5,29 @@
     name: integrit
     state: latest
   tags: [configuration, integrit, integrit-install]
+
+- name: update configuration file - /etc/integrit/integrit.debian.conf
+  template:
+    src: etc/integrit/integrit.debian.conf.j2
+    dest: /etc/integrit/integrit.debian.conf
+    owner: root
+    group: root
+    mode: 0600
+  tags: [configuration, integrit, integrit-configuration]
+
+- name: update configuration file - /etc/integrit/integrit.conf
+  template:
+    src: etc/integrit/integrit.conf.j2
+    dest: /etc/integrit/integrit.conf
+    owner: root
+    group: root
+    mode: 0600
+  register: result
+  tags: [configuration, integrit, integrit-configuration]
+
+- name: remove known db (once)
+  file:
+    path: "{{ integrit_known_db }}"
+    state: absent
+  when: result|changed
+  tags: [configuration, integrit, integrit-force-update]

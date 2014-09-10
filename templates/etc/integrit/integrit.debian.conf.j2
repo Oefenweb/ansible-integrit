@@ -6,14 +6,14 @@
 # file names are separated with spaces, e.g.:
 # CONFIGS="/etc/integrit/usr.conf /etc/integrit/lib.conf"
 # CONFIGS="/etc/integrit/integrit.conf"
-CONFIGS=""
+CONFIGS="{{ integrit_configs | join(' ') }}"
 
 # Set the mail address reports are sent to
-EMAIL_RCPT="root"
+EMAIL_RCPT="{{ integrit_email_rcpt }}"
 
 # Set the subject line for the report mails
-EMAIL_SUBJ="[integrit] `hostname -f`: report on changes in the filesystems"
+EMAIL_SUBJ="{{ integrit_email_subj }}"
 
 # If ALWAYS_EMAIL is set to ``true'', a report is mailed on every run.
 # Normally a report is only generated when integrit(1) exits non-zero.
-ALWAYS_EMAIL=false
+ALWAYS_EMAIL={{ 'true' if integrit_always_email else 'false' }}
