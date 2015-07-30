@@ -1,9 +1,11 @@
----
 # tasks file for integrit
+---
 - name: install
   apt:
     name: integrit
     state: latest
+    update_cache: true
+    cache_valid_time: 3600
   tags: [configuration, integrit, integrit-install]
 
 - name: update configuration file - /etc/integrit/integrit.debian.conf
@@ -29,5 +31,5 @@
   file:
     path: "{{ integrit_known_db }}"
     state: absent
-  when: result|changed
+  when: result | changed
   tags: [configuration, integrit, integrit-force-update]

@@ -1,5 +1,5 @@
----
 # defaults file for integrit
+---
 integrit_configs:
   - /etc/integrit/integrit.conf
 integrit_email_rcpt: root
