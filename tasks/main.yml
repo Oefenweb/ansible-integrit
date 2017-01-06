@@ -2,11 +2,15 @@
 ---
 - name: install
   apt:
-    name: integrit
-    state: latest
+    name: "{{ item }}"
+    state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  tags: [configuration, integrit, integrit-install]
+  with_items: "{{ integrit_dependencies }}"
+  tags:
+    - configuration
+    - integrit
+    - integrit-install
 
 - name: update configuration file - /etc/integrit/integrit.debian.conf
   template:
@@ -15,7 +19,10 @@
     owner: root
     group: root
     mode: 0600
-  tags: [configuration, integrit, integrit-configuration]
+  tags:
+    - configuration
+    - integrit
+    - integrit-configuration
 
 - name: update configuration file - /etc/integrit/integrit.conf
   template:
@@ -24,12 +31,18 @@
     owner: root
     group: root
     mode: 0600
-  register: result
-  tags: [configuration, integrit, integrit-configuration]
+  register: _result
+  tags:
+    - configuration
+    - integrit
+    - integrit-configuration
 
 - name: remove known db (once)
   file:
     path: "{{ integrit_known_db }}"
     state: absent
-  when: result | changed
-  tags: [configuration, integrit, integrit-force-update]
+  when: _result | changed
+  tags:
+    - configuration
+    - integrit
+    - integrit-force-update

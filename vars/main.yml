@@ -1,2 +1,4 @@
 # vars file for integrit
 ---
+integrit_dependencies:
+  - integrit
