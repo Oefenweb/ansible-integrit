@@ -41,7 +41,7 @@
   file:
     path: "{{ integrit_known_db }}"
     state: absent
-  when: _result | changed
+  when: _result is changed
   tags:
     - configuration
     - integrit
