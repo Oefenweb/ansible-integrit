@@ -1,6 +1,7 @@
 # meta file for integrit
 ---
 galaxy_info:
+  role_name: integrit
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up integrit in Debian-like systems
