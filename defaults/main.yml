@@ -1,4 +1,4 @@
-# defaults file for integrit
+# defaults file
 ---
 integrit_configs:
   - /etc/integrit/integrit.conf
