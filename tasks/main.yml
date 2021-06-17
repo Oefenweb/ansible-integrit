@@ -30,18 +30,8 @@
     owner: root
     group: root
     mode: 0600
-  register: _result
+  notify: remove known db (once)
   tags:
     - configuration
     - integrit
     - integrit-configuration
-
-- name: remove known db (once)
-  file:
-    path: "{{ integrit_known_db }}"
-    state: absent
-  when: _result is changed
-  tags:
-    - configuration
-    - integrit
-    - integrit-force-update

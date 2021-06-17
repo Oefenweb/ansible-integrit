@@ -1,6 +1,6 @@
 ## integrit
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-integrit.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-integrit)
+[![CI](https://github.com/Oefenweb/ansible-integrit/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-integrit/actions?query=workflow%3ACI)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-integrit-blue.svg)](https://galaxy.ansible.com/Oefenweb/integrit)
 
 Set up integrit in Debian-like systems.
