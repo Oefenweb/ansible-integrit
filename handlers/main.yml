@@ -1,6 +1,6 @@
 # handlers file
 ---
 - name: remove known db (once)
-  file:
+  ansible.builtin.file:
     path: "{{ integrit_known_db }}"
     state: absent
