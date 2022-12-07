@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: install
-  apt:
+  ansible.builtin.apt:
     name: "{{ integrit_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -12,7 +12,7 @@
     - integrit-install
 
 - name: update configuration file - /etc/integrit/integrit.debian.conf
-  template:
+  ansible.builtin.template:
     src: etc/integrit/integrit.debian.conf.j2
     dest: /etc/integrit/integrit.debian.conf
     owner: root
@@ -24,7 +24,7 @@
     - integrit-configuration
 
 - name: update configuration file - /etc/integrit/integrit.conf
-  template:
+  ansible.builtin.template:
     src: etc/integrit/integrit.conf.j2
     dest: /etc/integrit/integrit.conf
     owner: root
