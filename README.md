@@ -32,7 +32,7 @@ None
 ---
 - hosts: all
   roles:
-    - integrit
+    - oefenweb.integrit
 ```
 
 #### License
