@@ -28,4 +28,4 @@ integrit_rules:
   - '!/var/backups'
   - '!/var/run'
 
-  - '!{{ ansible_env.HOME }}/.ansible/tmp'
+  - "!{{ ansible_facts['env']['HOME'] }}/.ansible/tmp"
