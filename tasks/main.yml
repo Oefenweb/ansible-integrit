@@ -17,7 +17,7 @@
     dest: /etc/integrit/integrit.debian.conf
     owner: root
     group: root
-    mode: 0600
+    mode: '0600'
   tags:
     - configuration
     - integrit
@@ -29,7 +29,7 @@
     dest: /etc/integrit/integrit.conf
     owner: root
     group: root
-    mode: 0600
+    mode: '0600'
   notify: remove known db (once)
   tags:
     - configuration
